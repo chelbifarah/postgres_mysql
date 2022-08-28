@@ -16,4 +16,6 @@ def add_column_postgresql(table_name, column_name):
     return query_add_column
 
 
-
+def add_row_postgresql(table_name, header_query, var_query):
+    sql = "INSERT INTO {} ({}) VALUES ({})".format(table_name, header_query, var_query)
+    return sql

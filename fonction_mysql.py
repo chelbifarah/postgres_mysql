@@ -17,4 +17,6 @@ def add_column_mysql(table_name, column_name):
     query_add_column = "alter table " + table_name + " ADD " + column_name + " varchar(255)"
     return query_add_column
 
-    #return mydb
+def add_row_mysql(table_name, header_query, var_query):
+    sql = "INSERT INTO {} ({}) VALUES ({})".format(table_name, header_query, var_query)
+    return sql
